@@ -1,5 +1,7 @@
 package classMethod.human;
 
+import classMethod.human.Human02;
+
 public class ClassMethod02 {
     public static void main(String[] args) {
     	Human02 yamada = new Human02();
