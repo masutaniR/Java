@@ -1,43 +1,29 @@
 package practice;
 
+import java.math.BigDecimal;
 
-class Basket<E> {
-	private E elem;
+class Basket01<E extends Fruit> {
+    private E elem;
+    private final BigDecimal PRICE = new BigDecimal(100);
 
-	Basket(E e) {
-		elem = e;
-	}
+    Basket01(E e) {
+    	elem = e;
+    }
 
-	void replace(E e) {
-		elem = e;
-	}
+    void replace(E e) {
+    	elem = e;
+    }
 
-	E get() {
-		return elem;
-	}
-}
+    E get() {
+    	return elem;
+    }
 
-class Apple {
-	private String name;
+    void printName() {
+    	System.out.println("籠の中身は" + elem.getName() + "です。");
+    }
 
-	Apple(String name) {
-		this.name = name;
-	}
-
-	String getName() {
-		return name;
-	}
-}
-
-
-class Peach {
-    private String name;
-
-	Peach(String name) {
-		this.name = name;
-	}
-
-	String getName() {
-		return name;
-	}
+    void printTotalPrice() {
+    	BigDecimal totalPrice = PRICE.add(elem.getPrice());
+    	System.out.println(elem.getName() + "の入った籠は合計" + totalPrice + "円です。");
+    }
 }
